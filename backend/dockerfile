@@ -1,0 +1,17 @@
+FROM python:3.12-slim
+
+WORKDIR /backend
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHON UNBUFFERED 1
+ENV DOCKER_RUNNING True
+
+
+RUN pip install --upgrade pip
+RUN pip install pipenv
+
+# Install dependencies
+COPY ./Pipfile Pipfile
+RUN pipenv install --skip-lock --system --dev
+
+COPY . .

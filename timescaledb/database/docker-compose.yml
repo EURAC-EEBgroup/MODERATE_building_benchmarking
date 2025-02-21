@@ -1,0 +1,20 @@
+version: "3.7"
+
+services: 
+  db:
+    container_name: moderate_store_data
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    # image: osomova/store_data:dev #prod.
+    env_file:
+      - db.env
+    volumes:
+      - store_data:/var/lib/postgresql/data/
+    ports:
+      - 25432:5432
+   
+
+volumes:
+  store_data: null
+  

@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            // "program": "frontend/dash_app/app_debug.py",
+            "program": "frontend_mantine/app_debug.py",
+            // "program": "frontend_mantine/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // "pythonPath": "/vnev/bin/python/python3.12"
+        }
+    ]
+}

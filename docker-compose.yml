@@ -1,0 +1,28 @@
+
+services:
+  web:
+    # build:
+    #   context: ./frontend_mantine
+    #   dockerfile: Dockerfile
+    image: osomova/moderate_store_app:dev
+    command:  gunicorn -w 3 -b :8099 app:server
+    ports:
+      - 8099:8099
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+
+  backend:
+    # build: 
+      # context: ./backend
+      # dockerfile: Dockerfile
+    image: osomova/moderate_store_api:dev
+    command: uvicorn main:app --host 0.0.0.0
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env

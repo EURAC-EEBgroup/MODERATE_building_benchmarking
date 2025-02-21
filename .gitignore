@@ -1,0 +1,7 @@
+__pycache__
+.env
+vnev
+backend/backend_bench
+backend/readme_develop.md
+frontned_mantine/test.py
+.vscode
